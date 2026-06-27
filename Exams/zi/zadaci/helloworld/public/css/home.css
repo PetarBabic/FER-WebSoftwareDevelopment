@@ -1,0 +1,26 @@
+:root {
+    background-color: #f4f4f9;
+    font-family: sans-serif;
+    color: #4a90e2;
+}
+body {
+    padding: 1rem;
+    background-color: white;
+    margin: 25rem auto;
+    
+    max-width: 50rem;
+
+    border-radius: 10px;
+}
+input{
+    transition-duration: 0.1s;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    padding: 0.7rem;
+    border: 0.5px #ddd;
+}
+
+input:hover{
+    background-color: #357ab8
+}

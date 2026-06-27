@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2. Slagalica</title>
+    </head>
+    <style>
+        /* sav CSS kod ovdje */
+        .hidden {
+            display: none;
+        }
+
+        * {
+            font-size: 2.5rem;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        #counter{
+            position: absolute;
+            right: 4px;
+
+            background-color: rgb(24, 209, 251);
+
+            padding: 0.5rem;
+
+            border-radius: 15px;
+            border: solid black;
+        }
+
+        .game-container {
+            width: 60vw;
+            display: grid;
+            grid-template-columns: 20vw 20vw 20vw;
+            grid-template-rows: 20vw 20vw 20vw;
+
+            margin-top: 1rem;
+        }
+
+        .tile{
+            transition-duration: 0.2s;
+            background-color: lightskyblue;
+
+            margin: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tile:hover {
+            background-color: rgb(213, 239, 255);
+        }
+        .tile:active{
+            background-color: lightyellow;
+            border:solid silver;
+        }
+    </style>
+
+    <body>
+        <div id="counter">0</div>
+        <div class="game-container">
+            <div class="tile">9</div>
+            <div class="tile">4</div>
+            <div class="tile">6</div>
+
+            <div class="tile">2</div>
+            <div class="tile">1</div>
+            <div class="tile">3</div>
+
+            <div class="tile">5</div>
+            <div class="tile">7</div>
+            <div class="tile">8</div>
+        </div>
+        <h1 id="msgGameOver" class="hidden">Game over!</h1>
+    </body>
+    <script>
+        const tiles = document.getElementsByClassName("tile");
+        var btn = document.createElement("a")
+        btn.setAttribute("href", "#")
+        var counterDiv = document.getElementById("counter")
+
+        const arr = [0, 0];
+        let click = 0;
+        var counter = 1;
+        var previus;
+
+        var correct = false
+
+        for (let i = 0; i < tiles.length; i++) {
+            tiles[i].onclick = () => {
+                tiles[i].style.backgroundColor = "lightyellow";
+                tiles[i].style.border = "solid silver"
+                arr[click] = tiles[i].textContent
+
+                if(click == 0)
+                    previus = i;
+
+                click++;
+
+                if(click == 2) {
+                    //tiles[i].innerHTML = arr[click - 1].toString
+                    tiles[i].textContent = arr[click - 2]
+                    tiles[previus].textContent = arr[click - 1]
+                    console.log(arr[click - 2]);
+
+                    click = 0;
+                    counterDiv.innerHTML = counter++;
+
+                    tiles[i].style.backgroundColor = "white"
+                    tiles[i].style.border = "none"
+
+                    tiles[previus].style.backgroundColor = "lightskyblue"
+                    tiles[previus].style.border = "none"
+
+                    for (let i = 0; i < tiles.length - 1; i++) {
+                        if(tiles[i].textContent > tiles[i + 1].textContent){
+                            correct = false;
+                            break
+                        }
+                        else
+                            correct = true
+                    }
+
+                    console.log("Pobjeda")
+                    var hidden = document.getElementsByClassName("hidden")[0]
+                    hidden.style.display = "inline"
+
+                }
+            }
+        }
+    </script>
+</html>

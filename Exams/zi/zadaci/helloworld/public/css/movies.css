@@ -1,0 +1,52 @@
+:root {
+    background-color: #f4f4f9;
+    font-family: sans-serif;
+    color: #4a90e2;
+}
+body {
+    padding: 1rem;
+    background-color: white;
+    margin: 20rem auto;
+    
+    max-width: 50rem;
+
+    border-radius: 10px;
+}
+
+input{
+    transition-duration: 0.1s;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    padding: 0.7rem;
+    border: 0.5px #ddd;
+}
+
+input:hover{
+    background-color: #357ab8
+}
+
+#movie-list {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+#movie {
+    border: 2px solid #ddd;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+
+    border-radius: 5px;
+}
+
+#description {
+    padding-top: 1rem;
+    color: black;
+}

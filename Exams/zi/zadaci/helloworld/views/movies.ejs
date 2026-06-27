@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/movies.css">
+</head>
+    <body>
+        <h1>Movie List</h1>
+
+        <form action="movies/add" method="GET">
+            <input type="submit" value="Add new movie">
+        </form>
+
+        <div id="movie-list">
+            <%- include('partials/render_movies', { movies:movies, directors:directors }) %>
+        </div>
+
+        <form action="/" method="GET">
+            <input type="submit" value="Home">
+        </form>
+    </body>
+</html>

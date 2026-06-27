@@ -1,0 +1,42 @@
+:root {
+    background-color: #f4f4f9;
+    font-family: sans-serif;
+    color: #4a90e2;
+}
+body {
+    padding: 1rem;
+    background-color: white;
+    margin: 20rem auto;
+    
+    max-width: 50rem;
+
+    border-radius: 10px;
+}
+
+#button{
+    transition-duration: 0.1s;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    padding: 0.7rem;
+    border: 0.5px #ddd;
+}
+
+#button:hover{
+    background-color: #357ab8
+}
+
+#add {
+    color: black;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#text{
+    padding-right: 35rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+
+    border-radius: 5px;
+    border: 0.5px solid gray;
+}
