@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>internetska trgovina</title>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="header">
+            <div><a href="index.html"><img src="images/logo.png" id="logo"></a></div>
+            <h1 id="current-category"></h1>
+            
+            <div class="cart-search">
+                <div class="cart">
+                    <a href="cart.html">
+                        <img src="images/icons/cart.png" id="cart">
+                    </a>
+                    <div class="counter" id="cartCounter"></div>
+                </div>
+                <img src="images/icons/search.png" id="search">
+            </div>
+        </div>
+
+        <div class="banner-image">
+            <img src="images/banner1.jpg">
+            <div id="image-text">Uplovite u svijet <b>vrhunskih</b> računarnih dijelova s nama!</div>
+        </div>
+        
+        <div class="sidebar">
+            <ul class="categories" id="categories"></ul>
+            <div>
+                <ul>
+                    <li><a href="index.html">Kontakt</a></li>
+                    <li><a href="index.html">Newsletter</a></li>
+                    <li><a href="index.html">Pretplati se</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <section>
+                <div class="flex-container" id="productsId"></div>
+                <script type="text/javascript" src="scripts/data.js"></script>
+                <script type="text/javascript" src="scripts/index.js"></script>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
