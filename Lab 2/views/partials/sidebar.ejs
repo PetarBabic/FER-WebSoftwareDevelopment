@@ -1,0 +1,21 @@
+<div class="sidebar">
+    <ul class="categories" id="categories">
+        <% categories.forEach(category => { %>
+            <% if(category.id == cat) {%>
+                <li id="<%= category.name %>" style="background-color:whitesmoke; font-weight:bold;""> 
+                    <a href="/home/getProducts/<%= category.id %>"><%= category.name %></a>
+                </li>
+            <% } else {%>
+            
+            <li id="<%= category.name %>"> 
+                <a href="/home/getProducts/<%= category.id %>"><%= category.name %></a>
+            </li>
+          <% }}); %>
+    </ul>
+
+    <ul>
+        <li><a href="/">Kontakt</a></li>
+        <li><a href="/">Newsletter</a></li>
+        <li><a href="/">Pretplati se</a></li>
+    </ul>
+</div>

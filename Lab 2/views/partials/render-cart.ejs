@@ -1,0 +1,34 @@
+<div class="articles" id="articles">
+    <article style="border: 0cap; background-color: white">
+        <div>Proizvod</div>
+        <div>Količina</div>
+    </article>
+
+    <% categories.forEach(category => { %>
+        <% category.products.forEach(item => { %>
+            <% if(num[item.id]) {%>
+                <article>
+                    <div><%= item.name %></div>
+                    <div>
+
+                        <form action="/cart/add/<%= item.id %>" method="post">
+                            <button name="item" value="<%= item.id %>">
+                                <img src="/public/images/icons/plus.png">
+                            </button>
+                            <input type="hidden" name="category" value="-1" />
+                        </form>
+                        <div>
+                            <%= num[item.id] %>
+                        </div>
+                        <form action="/cart/remove/<%= item.id %>" method="post">
+                            <button name="item" value="<%= item.id %>">
+                                <img src="/public/images/icons/minus.png">
+                            </button>
+                            <input type="hidden" name="category" value="-1" />
+                        </form>
+                    </div>
+                </article>
+            <% } %>
+        <% }) %>
+    <% }) %>
+</div>

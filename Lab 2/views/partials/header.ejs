@@ -1,0 +1,37 @@
+<div class="header">
+    <div><a href="/"><img src="/public/images/logo.png" id="logo"></a></div>
+    <h1 id="current-category">
+        <% if(!categories) {%>
+             Košarica
+        <% }else if(category) {%>
+            <%= categories.at(category).name %>
+        <% } else {%>
+            Odaberite kategoriju
+        <% } %>
+    </h1>
+    
+    <div class="cart-search">
+        <div class="cart">
+            <a href="/cart">
+                <img src="/public/images/icons/cart.png" id="cart">
+            </a>
+            <% var total = 0%>
+            <% for(var i = 1; i < 52; i++) {%>
+                <% if(num[i]){ %>
+                    <% total += num[i]%>
+            <% }} %>
+            <div class="counter" id="cartCounter" <% if(total != 0) {  %> style="visibility: visible;" <%} else { %> style="visibility: hidden;" <%} %>>
+                
+                <%= total %>
+            </div>
+        </div>
+        <img src="/public/images/icons/search.png" id="search">
+    </div>
+</div>
+
+<% if(categories) {%>
+    <div class="banner-image">
+        <img src="/public/images/banner1.jpg">
+        <div id="image-text">Uplovite u svijet <b>vrhunskih</b> računarnih dijelova s nama!</div>
+    </div>
+<% } %>

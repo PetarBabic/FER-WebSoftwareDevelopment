@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href= ""> -->
+    <link rel="stylesheet" href="/public/styles/index.css">
+
+    <title>WebShop</title>
+</head>
+<body>
+
+    <div class="grid-container">
+        <%- include('partials/header', {categories: categories, category: category, num: num}) %>
+        
+        <%- include('partials/sidebar', { categories: categories, cat: category }) %>
+
+        <% if(category) { %>
+            <%- include('partials/render-products', { categories: categories, category: category, num: num }) %>
+        <% } %>
+    </div>
+
+</body>
+</html>

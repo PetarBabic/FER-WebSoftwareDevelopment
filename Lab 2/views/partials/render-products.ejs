@@ -1,0 +1,33 @@
+<div>
+    <section>
+        <div class="flex-container" id="productsId">
+
+            <% categories.at(category).products.forEach(item => { %>
+                <div class="product">
+                    <div>
+                        <img src="/public/images/products/<%= item.image %>" alt="">
+
+                        <form action="/cart/add/<%= item.id %>" method="post">
+                            <button name="item" value="<%= item.id %>">
+                                <img src="/public/images/icons/addToCart.png" alt="">
+                            </button>
+                            <input type="hidden" name="category" value="<%= category %>" />
+
+                        </form>
+                        
+                        <div class="counter" <% if(num[item.id]) {  %> style="visibility: visible;" <%} else { %> style="visibility: hidden;" <%} %> >
+                            <%= num[item.id] %>     
+                        </div>
+                    </div>
+                    <div class="productText"> 
+                        <b> <%= item.name %> </b>
+                        
+                        <br>
+                        <%= categories.at(category).name %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+</div>
+

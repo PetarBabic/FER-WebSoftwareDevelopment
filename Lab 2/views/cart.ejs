@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles/cart.css">
+
+    <title>WebShop - Cart</title>
+</head>
+<body>
+    <%- include('partials/header', {categories: null, category: 'Košarica', num: num}) %>
+
+    <%- include('partials/render-cart', {categories: categories, num: num}) %>
+
+    <script type="text/javascript" src="scripts/data.js"></script>
+    <script type="text/javascript" src="scripts/cart.js"></script>
+        
+</body>
+</html>
